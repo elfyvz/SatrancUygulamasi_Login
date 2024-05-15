@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Parent Login";
+}
+
+<h2 style="text-align:center; font-family:Arial, sans-serif; margin-top:50px;">Log In As a Parent</h2>
+
+<div style="display:flex; justify-content:center; align-items:center; height:80vh; background-image:url('C:\Users\elf_y\source\repos\SatrancUygulamasi\Data\Background\parentLogin.jpg'); background-size:cover;">
+    <div style="background:rgba(255, 255, 255, 0.8); padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0, 0, 0, 0.1); width:400px; text-align:center;">
+        <form asp-action="ParentLogin" method="post">
+            <div style="margin-bottom:15px;">
+                <input type="email" name="email" placeholder="Email" required style="width:100%; padding:10px; font-size:16px; border:1px solid #ccc; border-radius:5px;" />
+            </div>
+            <div style="margin-bottom:15px;">
+                <input type="password" name="password" placeholder="Password" required style="width:100%; padding:10px; font-size:16px; border:1px solid #ccc; border-radius:5px;" />
+            </div>
+            <div>
+                <button type="submit" style="width:100%; padding:10px; font-size:16px; background-color:green; color:white; border:none; border-radius:5px;">Log in</button>
+            </div>
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div style="color:red; margin-top:15px;">@ViewBag.ErrorMessage</div>
+            }
+        </form>
+
+        <div style="margin-top:15px;">
+            <a href="@Url.Action("ParentRegister", "Home")" style="color:orange;">Student Login</a>
+        </div>
+    </div>
+</div>

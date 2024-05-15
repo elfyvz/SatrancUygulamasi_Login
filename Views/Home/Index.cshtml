@@ -1,0 +1,31 @@
+﻿@using SatrancUygulamasi.Data.Entities
+@model IEnumerable<Parent>
+
+<h2>Parents and Their Students</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Parent Name</th>
+            <th>Email</th>
+            <th>Students</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var parent in Model)
+        {
+            <tr>
+                <td>@parent.Name</td>
+                <td>@parent.Email</td>
+                <td>
+                    <ul>
+                        @foreach (var student in parent.Students)
+                        {
+                            <li>@student.Name (@student.Age)</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
